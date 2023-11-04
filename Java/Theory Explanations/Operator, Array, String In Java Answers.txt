@@ -1,0 +1,59 @@
+Sure, here are the answers to your questions without any formatting:
+
+1. List the Operators in Java:
+
+   - Arithmetic Operators: +, -, *, /, % (addition, subtraction, multiplication, division, modulo)
+   - Relational Operators: ==, !=, <, >, <=, >= (equality, inequality, less than, greater than, less than or equal to, greater than or equal to)
+   - Logical Operators: &&, ||, ! (logical AND, logical OR, logical NOT)
+   - Assignment Operators: =, +=, -=, *=, /=, %= (simple assignment, addition assignment, subtraction assignment, multiplication assignment, division assignment, modulo assignment)
+   - Increment/Decrement Operators: ++, -- (increment, decrement)
+   - Bitwise Operators: &, |, ^, ~, <<, >>, >>> (bitwise AND, bitwise OR, bitwise XOR, bitwise NOT, left shift, right shift, unsigned right shift)
+   - Conditional (Ternary) Operator: ? : (conditional expression)
+   - instanceof Operator: Used to test if an object is an instance of a class or interface.
+
+2. Explain about Increment and Decrement operators and give an examples:
+
+   - Increment Operator (++): It increases the value of a variable by 1.
+   - Decrement Operator (--): It decreases the value of a variable by 1.
+
+   Example:
+   int x = 5;
+   int y = 10;
+   x++; // After this, x is 6
+   y--; // After this, y is 9
+
+3. What are the Conditional Operators in Java?
+   Conditional operators in Java include the following:
+   - Conditional (Ternary) Operator: It is represented as `? :` and is used for conditional expressions. It returns one of two values based on a condition.
+
+4. What are the types of operators based on the number of operands?
+   Operators in Java can be categorized based on the number of operands into:
+   - Unary Operators (operate on one operand)
+   - Binary Operators (operate on two operands)
+   - Ternary Operator (conditional operator, operates on three operands)
+
+5. What are the conditional Statements and use of conditional statements in Java?
+   Conditional statements in Java are used to make decisions in a program. They allow you to execute different code blocks based on conditions. Common conditional statements include if, else if, else, and switch.
+
+6. What is the syntax of if else statement?
+   The basic syntax of the `if-else` statement in Java is as follows:
+   if (condition) {
+   } else {
+   }
+   ```
+
+7. What are the 3 types of iterative statements in java?
+   The three types of iterative statements (loops) in Java are:
+   - for loop
+   - while loop
+   - do-while loop
+
+8. What do you mean by an Array?
+   An array in Java is a data structure that stores a fixed-size, ordered collection of elements of the same data type. Arrays are used to group related data items under a single name for easier access and manipulation.
+
+9. How to create an Array?
+   You can create an array in Java using the following syntax:
+   data_type[] array_name = new data_type[array_size];
+10. State the difference between StringBuffer and StringBuilder in Java:
+    - StringBuffer is synchronized, which means it is thread-safe, but this can impact performance in a multi-threaded environment.
+    - StringBuilder is not synchronized, offering better performance in a single-threaded environment but is not thread-safe.
