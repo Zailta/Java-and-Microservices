@@ -1,1 +1,38 @@
 
+1. What are Primitive Data types in Java?
+   In Java, primitive data types are the basic building blocks for representing simple values. There are eight primitive data types: byte, short, int, long, float, double, char, and boolean.
+
+2. What are the identifiers in Java?
+   Identifiers in Java are names used for various programming elements such as classes, variables, methods, and interfaces. Rules for identifiers in Java include starting with a letter, underscore (_), or a dollar sign ($) and consisting of letters, digits, underscores, or dollar signs. Identifiers are case-sensitive.
+
+3. What is a final class in Java?
+   A final class in Java is a class that cannot be extended or subclassed. It prevents inheritance, meaning you cannot create subclasses of a final class. This is often used to prevent further modifications or specialization of a class, ensuring its stability.
+
+4. What are the two ways to make a class final?
+   You can make a class final in two ways:
+   - Use the final keyword in the class declaration: final class MyClass {...}
+   - By declaring all of its constructors as private, which prevents the class from being extended since no subclasses can access the constructor.
+
+5. Can we create an instance of a final class in another class?
+   Yes, you can create an instance of a final class in another class. A final class can be instantiated just like any other class. However, you cannot extend or subclass it.
+
+6. What is the volatile keyword used for?
+   The volatile keyword in Java is used to indicate that a variable's value may be changed by multiple threads simultaneously. It ensures that when a thread reads a volatile variable, it always sees the most recent value, and when it writes to the variable, the change is immediately visible to other threads.
+
+7. What is the use of the transient keyword?
+   The transient keyword is used in Java to indicate that a variable should not be serialized when the object it belongs to is serialized. This is often used when certain fields of an object should not be included in the serialized representation.
+
+8. What are the types of casting?
+   There are two main types of casting in Java:
+   - Implicit Casting (Widening): It occurs when a smaller data type is cast to a larger data type, and there is no loss of data.
+   - Explicit Casting (Narrowing): It involves manually converting a larger data type to a smaller data type, and there may be a loss of data. It requires the use of a cast operator.
+
+9. What is boxing and unboxing?
+   - Boxing: Boxing is the process of converting a primitive data type (e.g. nt) into its corresponding wrapper class (e.g. Integer).
+   - Unboxing: Unboxing is the reverse process, where a wrapper class object (e.g., Integer) is converted back to its primitive data type (e.g., int).
+
+10. What is the difference between keywords, identifiers, and literals in Java?
+   - Keywords: Keywords are reserved words in Java that have predefined meanings and cannot be used as identifiers. Examples include class, public, void, etc.
+   - Identifiers: Identifiers are names given to various programming elements such as variables, classes, methods, etc. They are created by developers and must follow certain naming rules.
+   - Literals: Literals are fixed values in code. They can be numbers, characters, or strings that represent specific values directly in code. For example, 5 is a numeric literal, and "Hello" is a string literal.
+
