@@ -17,6 +17,7 @@ public class FunctionsAndPredicate {
 		
 		Function<Integer, String> gradeFunction = marks->{
 			String gradeObtained = "";
+			
 			;
 			switch (marks/10) {
 			case 10: 

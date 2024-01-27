@@ -22,6 +22,7 @@ public class StudentBean {
 		this.marksObtained = marksObtained;
 		this.gradeObtained = gradeObtained;
 		this.gradeValue = gradeValue;
+		
 	}
 	public int getStudentId() {
 		return studentId;
