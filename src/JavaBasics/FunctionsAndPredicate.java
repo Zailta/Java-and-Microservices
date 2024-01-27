@@ -73,7 +73,7 @@ public class FunctionsAndPredicate {
 		
 		Supplier<StudentBean[]> studentBeanSupplier = () -> new StudentBean[]{
 			new StudentBean(1, "Mohammad", "Azam", 95, "", ""),
-			new StudentBean(2, "Mohammad", "Azam", 95, "", ""), new StudentBean(3, "Mohammad", "Manaan", 85, "", ""),
+			new StudentBean(2, "Tufail", "Matoo", 95, "", ""), new StudentBean(3, "Mehdi", "Hassan", 85, "", ""),
 			new StudentBean(4, "Zailta", "Casper", 75, "", ""), new StudentBean(5, "Jane", "Doe", 65, "", ""),
 			new StudentBean(6, "Sebastian", "Mars", 55, "", "") 
 		};
