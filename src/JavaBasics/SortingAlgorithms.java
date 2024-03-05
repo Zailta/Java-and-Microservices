@@ -5,6 +5,20 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class SortingAlgorithms {
+	
+	public static int[] insertionSort(int[] input, int size) {
+		for(int i =1; i<size;i++) {
+			
+			int item = input[i];
+			int j = i-1;
+			while(j>=0 && input[j]> item) {
+				input[j+1] = input[j];
+				j--;	
+			}
+			input[j+1] = item;
+		}
+		return input;
+	}
 
 	public static int[] bubbleSort(int[] input, int size) {
 		for (int i = 0; i <= size - 2; i++) {
@@ -78,14 +92,22 @@ public class SortingAlgorithms {
 
 	public static void main(String[] args) throws IOException {
 		int[] arr = { 52, 23, 45, 67, 12, 56 };
-		int[] selectionSort = selectionSort(arr, arr.length);
-		int[] bubbleSort = bubbleSort(arr, arr.length);
-		int[] arr1 = { 52, 23, 45, 67, 12, 56 };
-		quickSort(arr1, 0, arr.length - 1);
-
-		System.out.println("Sort using Selection Sort ->" + Arrays.toString(selectionSort));
-		System.out.println("Sort using Bubble Sort ->" + Arrays.toString(bubbleSort));
-		System.out.println("Sort using Quick Sort ->" + Arrays.toString(arr1));
+		
+		  int[] selectionSort = selectionSort(arr, arr.length); 
+		  int[] bubbleSort = bubbleSort(arr, arr.length); 
+		  int[] arr1 = { 52, 23, 45, 67, 12, 56 };
+		  quickSort(arr1, 0, arr.length - 1);
+		 
+		int[] insertionSort = insertionSort(arr, arr.length);
+		
+		  System.out.println("Sort using Selection Sort ->" +
+		  Arrays.toString(selectionSort));
+		  System.out.println("Sort using Bubble Sort ->" +
+		  Arrays.toString(bubbleSort)); System.out.println("Sort using Quick Sort ->" +
+		  Arrays.toString(arr1));
+		  System.out.println("Sort using Insertion Sort ->" + Arrays.toString(insertionSort));
+		 
+		
 	}
 
 }
