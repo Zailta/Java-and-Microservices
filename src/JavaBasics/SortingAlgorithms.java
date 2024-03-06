@@ -6,6 +6,59 @@ import java.util.Arrays;
 
 public class SortingAlgorithms {
 	
+	public static void  merge(int[] input, int low, int high) {
+		if(low<high) {
+			int mid  = (low+high)/2;
+			merge(input, low, mid);
+			merge(input, mid+1, high);
+			combine(input, low, mid, high);
+		}
+		
+	}
+	
+	public static void combine(int[] input, int low, int mid, int high) {
+		int [] newBag  = new int[high+1];
+		int i = low;
+		int j = mid+1;
+		int k = low;
+		
+		
+		while (i<=mid && j<=high) {
+			if(input[i]<input[j]) {
+				newBag[k] = input[i];
+				i++;
+			}
+			else {
+				newBag[k] = input[j];
+				j++;
+			}
+			k++;
+		}
+		
+		if(i>mid) {
+			while(j<=high) {
+			newBag[k] = input[j];
+			j++;
+			k++;
+			}
+		}
+		else {
+			while(i<=mid) {
+			newBag[k] = input[i];	
+			i++;
+			k++;
+			}
+		}
+		
+		for(k =low;k<=high;k++) {
+			input[k] = newBag[k];
+			System.out.println(input[k] );
+		}
+		
+		
+		
+	}
+
 	public static int[] insertionSort(int[] input, int size) {
 		for(int i =1; i<size;i++) {
 			
@@ -93,20 +146,23 @@ public class SortingAlgorithms {
 	public static void main(String[] args) throws IOException {
 		int[] arr = { 52, 23, 45, 67, 12, 56 };
 		
-		  int[] selectionSort = selectionSort(arr, arr.length); 
-		  int[] bubbleSort = bubbleSort(arr, arr.length); 
-		  int[] arr1 = { 52, 23, 45, 67, 12, 56 };
-		  quickSort(arr1, 0, arr.length - 1);
-		 
-		int[] insertionSort = insertionSort(arr, arr.length);
-		
-		  System.out.println("Sort using Selection Sort ->" +
-		  Arrays.toString(selectionSort));
-		  System.out.println("Sort using Bubble Sort ->" +
-		  Arrays.toString(bubbleSort)); System.out.println("Sort using Quick Sort ->" +
-		  Arrays.toString(arr1));
-		  System.out.println("Sort using Insertion Sort ->" + Arrays.toString(insertionSort));
-		 
+		/*
+		 * int[] selectionSort = selectionSort(arr, arr.length); int[] bubbleSort =
+		 * bubbleSort(arr, arr.length); int[] arr1 = { 52, 23, 45, 67, 12, 56 };
+		 * quickSort(arr1, 0, arr.length - 1);
+		 * 
+		 * int[] insertionSort = insertionSort(arr, arr.length);
+		 */
+		  merge(arr, 0, arr.length-1);
+		  System.out.println(Arrays.toString(arr));
+			/*
+			 * System.out.println("Sort using Selection Sort ->" +
+			 * Arrays.toString(selectionSort));
+			 * System.out.println("Sort using Bubble Sort ->" +
+			 * Arrays.toString(bubbleSort)); System.out.println("Sort using Quick Sort ->" +
+			 * Arrays.toString(arr1)); System.out.println("Sort using Insertion Sort ->" +
+			 * Arrays.toString(insertionSort));
+			 */
 		
 	}
 
