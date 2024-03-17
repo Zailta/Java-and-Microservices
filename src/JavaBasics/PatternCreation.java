@@ -24,8 +24,20 @@ public static void printNumber(int rows, int coloumns) {
 		
 	}
 
+public static void printTriangle(int rows, int coloumns) {
+	
+	for(int i = 0; i<rows;i++) {
+		for(int j = 0; j<=i;j++) {
+			System.out.print("*");
+		}
+		System.out.println("");
+	}
+	
+}
+
+
 	public static void main(String[] args) {
-		printNumber(4, 5);
+		printTriangle(4, 5);
 	}
 
 }
