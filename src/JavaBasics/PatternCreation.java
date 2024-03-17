@@ -104,7 +104,29 @@ public static void printTrianglInverse(int rows) {
 			if(j<=rows-i)
 			System.out.print(" ");	
 			else 
-				System.out.print("*");
+				System.out.print("* ");
+		}
+		System.out.println();
+	}
+	
+}
+
+public static void printpalindromeTraingle(int rows) {
+	
+	
+	for(int i = 1; i<=rows;i++) {
+		int pal = 0;
+		for(int j = 1; j<=rows;j++) {
+			if(j<=rows-i)
+			System.out.print("*");	
+		}
+		for(int j = 1; j<=i;j++) {
+			System.out.print(j);
+			pal = j;
+			}
+		for(int k = 1; k<pal;k++)
+		{
+			System.out.print(pal-k);
 		}
 		System.out.println();
 	}
@@ -116,7 +138,7 @@ public static void printTrianglInverse(int rows) {
 
 
 	public static void main(String[] args) {
-		printTrianglInverse(4);
+		printpalindromeTraingle(4);
 	}
 
 }
