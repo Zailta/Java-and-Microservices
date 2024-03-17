@@ -46,9 +46,32 @@ public static void printTriangleNumbers(int rows) {
 	
 }
 
+public static void printTriangleOdd(int rows) {
+	
+	for(int i = 1; i<=rows;i++) {
+		for(int j = 1; j<=i;j++) {
+			System.out.print(2*j-1);
+		}
+		System.out.println("");
+	}
+	
+}
+
+public static void printTriangleEven(int rows) {
+	
+	for(int i = 0; i<=rows;i++) {
+		for(int j = 0; j<=i;j++) {
+			System.out.print(2*j);
+		}
+		System.out.println("");
+	}
+	
+}
+
+
 
 	public static void main(String[] args) {
-		printTriangleNumbers(4);
+		printTriangleEven(4);
 	}
 
 }
