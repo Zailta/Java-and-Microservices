@@ -118,7 +118,7 @@ public static void printpalindromeTraingle(int rows) {
 		int pal = 0;
 		for(int j = 1; j<=rows;j++) {
 			if(j<=rows-i)
-			System.out.print("*");	
+			System.out.print(" ");	
 		}
 		for(int j = 1; j<=i;j++) {
 			System.out.print(j);
