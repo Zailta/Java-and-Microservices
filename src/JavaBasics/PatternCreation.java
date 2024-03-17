@@ -39,7 +39,7 @@ public static void printTriangleNumbers(int rows, int coloumns) {
 	
 	for(int i = 0; i<rows;i++) {
 		for(int j = 0; j<=i;j++) {
-			System.out.print("*");
+			System.out.print(j+"");
 		}
 		System.out.println("");
 	}
