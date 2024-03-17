@@ -24,7 +24,7 @@ public static void printNumber(int rows, int coloumns) {
 		
 	}
 
-public static void printTriangle(int rows, int coloumns) {
+public static void printTriangle(int rows) {
 	
 	for(int i = 0; i<rows;i++) {
 		for(int j = 0; j<=i;j++) {
@@ -35,7 +35,7 @@ public static void printTriangle(int rows, int coloumns) {
 	
 }
 
-public static void printTriangleNumbers(int rows, int coloumns) {
+public static void printTriangleNumbers(int rows) {
 	
 	for(int i = 0; i<rows;i++) {
 		for(int j = 0; j<=i;j++) {
@@ -48,7 +48,7 @@ public static void printTriangleNumbers(int rows, int coloumns) {
 
 
 	public static void main(String[] args) {
-		printTriangleNumbers(4, 5);
+		printTriangleNumbers(4);
 	}
 
 }
