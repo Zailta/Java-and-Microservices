@@ -68,10 +68,36 @@ public static void printTriangleEven(int rows) {
 	
 }
 
+public static void printTrianglAP(int rows) {
+	
+	for(int i = 1; i<=rows;i++) {
+		int a = 1;
+		for(int j = 0; j<i;j++) {
+			System.out.print(a+"");
+			a+=1;
+		}
+		System.out.println("");
+	}
+	
+}
+
+public static void printTrianglConsecutiveNumbers(int rows) {
+	int a = 1;
+	for(int i = 1; i<=rows;i++) {
+		
+		for(int j = 0; j<i;j++) {
+			System.out.print(a+"");
+			a+=1;
+		}
+		System.out.println("");
+	}
+	
+}
+
 
 
 	public static void main(String[] args) {
-		printTriangleEven(4);
+		printTrianglAP(4);
 	}
 
 }
