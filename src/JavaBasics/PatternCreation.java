@@ -133,12 +133,35 @@ public static void printpalindromeTraingle(int rows) {
 	
 }
 
+public static void starBridgePattern(int rows) {
+	
+	for(int i = 1;i<2*rows;i++) {
+		System.out.print("* ");
+	}
+	System.out.println();
+	for(int k=1;k<rows;k++) {
+	for(int j = 1; j<=rows-k;j++) {
+		System.out.print("* ");
+	}
+	for(int i =0;i<2*k-1;i++) {
+		System.out.print("  ");
+	}
+	for(int j = 1; j<=rows-k;j++) {
+		System.out.print("* ");
+	}
+	System.out.println();
+	}
+	
+	
+	
+}
+
 
 
 
 
 	public static void main(String[] args) {
-		printpalindromeTraingle(4);
+		starBridgePattern(4);
 	}
 
 }
