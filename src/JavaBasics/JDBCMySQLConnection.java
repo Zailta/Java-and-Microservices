@@ -46,6 +46,12 @@ public class JDBCMySQLConnection {
 	
 		
 	}
+	
+	/**
+	 * for Stored procedures we use Callable statements. in case we have a return value in our result set we use :
+	 * callableStatement.registerOutparameter(Number, Types.Type)
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		getProperties();
