@@ -173,11 +173,26 @@ public static void pyramid(int rows) {
 
 
 
+public static void inversePyramid(int rows) {
+	
+	for(int i =1; i<rows;i++) {
+		for(int j = 0;j<i; j++) {
+		
+			System.out.print("$");
+		}
+		for(int j = 0;j<2*(rows-i)-1; j++) {
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+	
+	
+}
 
 
 
 	public static void main(String[] args) {
-		pyramid(5);
+		inversePyramid(5);
 	}
 
 }
