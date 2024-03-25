@@ -1,5 +1,8 @@
 package JavaBasics;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class PatternCreation {
 	
 	public static void printrectangle(int rows, int coloumns) {
@@ -210,14 +213,10 @@ public static void mirrorPyramid(int rows) {
 		}
 		System.out.println();
 	}
-	
-	
 }
-
-
-
+	
 	public static void main(String[] args) {
-		mirrorPyramid(5);
+	mirrorPyramid(5);
 	}
 
 }
