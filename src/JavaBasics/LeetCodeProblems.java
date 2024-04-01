@@ -1,10 +1,33 @@
 package JavaBasics;
 
-import java.util.HashMap;
+import java.util.*;
 import java.util.Map;
 import java.util.Set;
 
 public class LeetCodeProblems {
+	
+	 public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+	        int count  = 0;
+	        for(int  i = 0; i<items.size();i++){
+	            List <String> item = items.get(i);
+	            if(ruleKey.equals("type")){
+	                if(item.get(0).equals(ruleValue)){
+	                    count++;
+	                }
+	            }
+	            else if(ruleKey.equals("color")){
+	                if(item.get(1).equals(ruleValue)){
+	                    count++;
+	                }
+	            }
+	            else{
+	                if(item.get(2).equals(ruleValue)){
+	                    count++;
+	                }
+	            }
+	        }
+	       return count; 
+	    }
 	
 	public String restoreString(String s, int[] indices) {
         char [] newString = new char[indices.length];
