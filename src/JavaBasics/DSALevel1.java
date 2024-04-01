@@ -45,12 +45,13 @@ public class DSALevel1 {
 			if(str.charAt(i) == ')') {
 				if(stack.peek() == '(') {	
 					System.out.println(true);
+					return;
 				}else {
 					while (stack.peek()!= '(') {
 						stack.pop();
 					}
+					stack.pop();
 				}
-				stack.pop();
 			}
 			else {
 				stack.push(str.charAt(i));
@@ -63,11 +64,11 @@ public class DSALevel1 {
 		int anybasetoDecimal = BaseConversion(172, 8, 10);
 		int anyBasetoAnyBase = BaseConversion(anybasetoDecimal, 10, 2);
 		int[] arr = {1,2,3,4};
-		//barGraph(arr);
-		String str = "((a+b)+ (c+d))";
+		barGraph(arr);
+		String str = "((a+b)+ ((c+d)))";
 		duplicateBrackets(str);
 		
-		//System.out.println(anyBasetoAnyBase);
+		
 	}
 
 }
