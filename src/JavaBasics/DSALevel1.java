@@ -1,5 +1,7 @@
 package JavaBasics;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 public class DSALevel1 {
@@ -60,12 +62,48 @@ public class DSALevel1 {
 		System.out.println(false);
 		
 	}
+	
+	public static  boolean isValid(String str) {
+        Stack<Character> stack = new Stack<Character>();
+        int count  = 0;
+      Map<Character, Character> paranthesisMap = new HashMap<Character, Character>();
+      paranthesisMap.put(')', '(');
+      paranthesisMap.put('}', '{');
+      paranthesisMap.put(']', '[');
+      
+		for(int i = 0; i<str.length();i++){
+          
+			if(str.charAt(i) == ')' || str.charAt(i) == '}'  || str.charAt(i) == ']' ) {
+              count--;
+				if(stack.contains((char)paranthesisMap.get(str.charAt(i)))) {
+				while(stack.peek() != (char)paranthesisMap.get(str.charAt(i))) {
+					stack.pop();
+				}
+				stack.pop();
+				}
+				else {return false;}
+			}
+			else {
+				stack.push(str.charAt(i));
+              count++;
+			}
+			
+		}
+		if(stack.isEmpty() && count ==0)
+			return true;
+		
+		return false;
+  }
+        
+    
 	public static void main(String[] args) {
 		int anybasetoDecimal = BaseConversion(172, 8, 10);
 		int anyBasetoAnyBase = BaseConversion(anybasetoDecimal, 10, 2);
 		int[] arr = {1,2,3,4};
 		barGraph(arr);
-		String str = "((a+b)+ ((c+d)))";
+		String str = "({[)";
+		boolean balancedParenthesis = isValid(str);
+		System.out.println(balancedParenthesis);
 		duplicateBrackets(str);
 		
 		
