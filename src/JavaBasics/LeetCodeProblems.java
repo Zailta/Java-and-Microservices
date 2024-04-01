@@ -6,6 +6,15 @@ import java.util.Set;
 
 public class LeetCodeProblems {
 	
+	public String restoreString(String s, int[] indices) {
+        char [] newString = new char[indices.length];
+        for(int i = 0 ; i<indices.length;i++){
+            newString[indices[i]] =  s.charAt(i);
+        }
+        return String.valueOf(newString);
+
+    }
+	
 	public static int[] twoSum(int[] nums, int target) {
 		  /*brute force:
         int[] indices = new int[2];
