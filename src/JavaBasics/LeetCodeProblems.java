@@ -147,6 +147,47 @@ public class LeetCodeProblems {
     	
     	return arr;
     }
+    
+    public void swap(int [] arr, int a, int b ){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+
+
+    }
+    public void sortColors(int[] nums) {
+        //Method 1:
+
+      /*  int zeroes = 0; 
+        int ones = 0;
+        for(int i = 0 ; i<nums.length; i++){
+            if(nums[i] == 0) zeroes++;
+            else if(nums[i] ==1) ones++;
+        }
+
+        for(int i = 0 ; i<nums.length; i++){
+            if(i<zeroes) nums[i] = 0;
+            else if(i<zeroes+ones) nums[i] =1;
+            else nums[i] = 2;
+        }
+*/
+      //  Method 2: Dutch Flag Algorithm
+      int mid = 0, low = 0, high = nums.length-1;
+
+      while (mid<=high){
+        if(nums[mid] == 0){
+            swap(nums, mid , low);
+            low++; mid++;
+        }
+        else if(nums[mid] == 1){
+            mid++;
+        }
+        else{
+            swap(nums, mid , high);
+            high--;
+        }
+      }
+    }
 
 	
 
