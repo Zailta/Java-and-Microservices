@@ -85,6 +85,49 @@ public class LeetCodeProblems {
 		return new int[] {};
 
 	}
+	
+	public void reverseArray( int[] arr, int beg, int end){
+        while (beg<=end){
+        int temp = arr[beg];
+        arr[beg] = arr[end];
+        arr[end]  = temp;
+        beg++;
+        end--;
+        }
+        }
+    public void rotate(int[] nums, int k) {
+        //optimised appraoch:
+        int n = nums.length;
+        k = k%n;
+        reverseArray(nums, 0, n-k-1);
+        reverseArray(nums, n-k, n-1);
+        reverseArray(nums, 0, n-1);
+
+
+
+
+        //brute force -  doesnt pass all test cases 
+       /* int [] res = new int[nums.length];
+        if(nums.length ==1){}
+        else{
+       for(int i = 0; i<nums.length;i++) {
+        if(i<=k && ((k-i-1) !=-1) ){
+        res[k-i-1] = nums[nums.length - 1-i];
+       }
+       else {
+        res[i] = nums[i-k];
+       }
+       }
+      for(int i = 0; i<res.length;i++){
+        nums[i] = res[i];
+      }
+        }
+        */
+
+       
+
+
+    }
 
 	public static void main(String[] args) {
 		int[] arr = { 2, 5, 5, 11 };

@@ -76,8 +76,10 @@ public class DSALevel1 {
 			if(str.charAt(i) == ')' || str.charAt(i) == '}'  || str.charAt(i) == ']' ) {
               count--;
 				if(stack.contains((char)paranthesisMap.get(str.charAt(i)))) {
-				while(stack.peek() != (char)paranthesisMap.get(str.charAt(i))) {
+				if(stack.peek() != (char)paranthesisMap.get(str.charAt(i))) {
 					stack.pop();
+				}else {
+					return false;
 				}
 				stack.pop();
 				}
