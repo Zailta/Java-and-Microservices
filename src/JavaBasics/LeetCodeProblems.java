@@ -230,7 +230,72 @@ public class LeetCodeProblems {
         
     }
 
-	
+    public int[] nextGreaterElement(int[] nums, int[] nums2) {
+        //worst approach
+        /* boolean flag = false;
+        Map<Integer, Integer> mapper = new HashMap<>();
+        int[] res = new int[nums.length];
+        for(int i = 0; i<nums2.length;i++){
+            int num = nums2[i];
+            int max = nums2[i];
+            
+         for(int j = i+1; j<nums2.length; j++){
+                 if(nums2[j] > max){
+                    max = nums2[j]; 
+                if(!mapper.containsKey(num)){
+                mapper.put(num, max);
+                }
+                }   
+            }
+        }   
+        for(int i = 0; i<nums.length;i++){
+            if(mapper.get(nums[i])!= null){
+                res[i] = mapper.get(nums[i]);
+            }
+            else {
+                res[i] = -1;
+            }
+            }*/
+            //brute
+       boolean flag = false;
+        int[] res = new int[nums.length] ;
+      outer: for(int i = 0; i<nums.length;i++){
+        inner: for(int j = 0; j<nums2.length;j++){
+            if(nums2[j] == nums[i]){
+                if(j == nums2.length-1){
+                    res[i] = -1;
+                    break inner ;
+                }
+                else 
+                {
+                int index = 0;
+                subinner: for(int k = j+1; k<nums2.length; k++){
+                if(nums2[k] >nums2[j]){
+                   flag = true;
+                   index = k;
+                    break subinner;
+                }
+                else{
+                     flag = false;
+                }
+                }
+                 if(flag){
+                    res[i] = nums2[index];
+                    break inner;
+                }
+                else{
+                    res[i] = -1;
+                     break inner;
+                }
+
+               
+                }
+            }
+       }
+    }
+
+    return res;
+}
 
 
 	public static void main(String[] args) {
