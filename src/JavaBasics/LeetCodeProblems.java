@@ -318,6 +318,17 @@ public class LeetCodeProblems {
 		}
     	System.out.println(sum);
     }
+     
+     public int[][] transpose(int[][] arr) {
+         int [][] transpose  = new int[arr[0].length][arr.length];
+
+       for (int i = 0; i < arr[0].length; i++) {//columns
+ 			for (int j = 0; j < arr.length; j++) {//rows
+ 				transpose[i][j] = arr[j][i];
+ 			}
+ 		}
+         return transpose;  
+     }
 
 
 	public static void main(String[] args) {
