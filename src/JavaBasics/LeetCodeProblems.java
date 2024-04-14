@@ -1,8 +1,6 @@
 package JavaBasics;
 
 import java.util.*;
-import java.util.Map;
-import java.util.Set;
 
 public class LeetCodeProblems {
 
@@ -388,10 +386,40 @@ public class LeetCodeProblems {
 
         return res; 
      }
+     
+     
+     public static List<List<Integer>> generate(int numRows) {
+         
+         List<List<Integer>> res = new ArrayList<>();
+
+         for(int i = 0; i< numRows;i++){
+             List<Integer> sub_res = new ArrayList<>();
+             for(int j = 0;j<=i;j++){ 
+                 if(j == 0 || j == (i)){
+                     sub_res.add(1);
+                     
+                 }
+                 else {
+                	 
+                     int num = res.get(i-1).get(j-1)+res.get(i-1).get(j);
+                     sub_res.add(num);
+                 }
+
+             }
+             res.add(sub_res);
+         }
+         return res;
+     }
 
 	public static void main(String[] args) {
-		 int arr[][] = {{1,2,3},{5,6,7},{8,9,10}};
-		 sumElement2D(arr);
+		
+		List<List<Integer>> generate = generate(5);
+		System.out.println(generate);
+		/*
+		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
+		 */
+		 
+		 
 	}
 
 }
