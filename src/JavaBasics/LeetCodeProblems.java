@@ -353,6 +353,41 @@ public class LeetCodeProblems {
      }
          
      }
+     
+     public List<Integer> spiralOrder(int[][] matrix) {
+         List<Integer> res = new ArrayList<>();
+         int minr=0, minc=0, maxr= matrix.length-1, maxc = matrix[0].length-1;
+
+         while(minr<=maxr && minc<=maxc){
+             //left-to-right
+             for(int i = minc; i<=maxc; i++){
+                     res.add(matrix[minr][i]);
+             }
+             minr++;
+             if(minr>maxr || minc>maxc) break;
+              //top-to-bottom
+             for(int i = minr; i<=maxr; i++){
+                     res.add(matrix[i][maxc]);
+             }
+             maxc--;
+             if(minr>maxr || minc>maxc) break;
+              //right-toleft
+             for(int i = maxc; i>=minc; i--){
+                     res.add(matrix[maxr][i]);
+             }
+             maxr--;
+             if(minr>maxr || minc>maxc) break;
+              //bottom-to-top
+             for(int i = maxr; i>=minr; i--){
+                     res.add(matrix[i][minc]);
+             }
+            minc++;
+
+
+         }
+
+        return res; 
+     }
 
 	public static void main(String[] args) {
 		 int arr[][] = {{1,2,3},{5,6,7},{8,9,10}};
