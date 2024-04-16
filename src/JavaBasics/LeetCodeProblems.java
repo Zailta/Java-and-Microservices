@@ -428,6 +428,42 @@ public class LeetCodeProblems {
     	 return res;	 
      }
      
+     public int matrixScore(int[][] grid) {
+         for(int i = 0; i<grid.length; i++){
+             //condition to make all 0 indexed 0s to 1
+             if(grid[i][0] == 0){
+                 for(int j = 0; j<grid[0].length; j++){
+                     if(grid[i][j] == 0) grid[i][j] = 1;
+                     else grid[i][j] = 0;
+                 }
+             }
+         }
+         
+         for(int i = 1; i<grid[0].length; i++){
+            int zeroes  = 0;
+            int ones = 0;
+                 for(int j = 0; j<grid.length; j++){
+                     if(grid[j][i] == 0) zeroes++;
+                     else ones++;
+                     
+                 }
+                 if(zeroes>ones){
+                   for(int j = 0; j<grid.length; j++){
+                     if(grid[j][i] == 0) grid[j][i] = 1;
+                     else grid[j][i] = 0;
+                 }  
+                 }  
+         }
+         int sum = 0;
+         for( int i = 0; i< grid.length; i++){
+             for(int j = 0; j<grid[0].length ; j++){
+                 if(grid[i][j]!=0)
+                 sum += grid[i][j] * Math.pow(2, grid[0].length-j-1);
+             }
+         }
+         return sum;
+     }
+     
 
 	public static void main(String[] args) {
 		
