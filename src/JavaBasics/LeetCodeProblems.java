@@ -475,6 +475,30 @@ public class LeetCodeProblems {
         return false; 
      }
      
+     public void setZeroes(int[][] arr) {
+         int[][] helper =  new int[arr.length][arr[0].length];
+         for(int i = 0; i< arr.length;i++){
+             for(int j = 0; j<arr[0].length;j++){
+                     helper[i][j] = arr[i][j];
+             }
+         }
+
+         for(int i = 0; i< arr.length;i++){
+             for(int j = 0; j<arr[0].length;j++){
+                 if(helper[i][j] == 0){
+                     for(int a = 0; a < arr.length; a++){
+                         arr[a][j] = 0;
+                     }
+
+                     for(int b = 0; b < arr[0].length; b++){
+                         arr[i][b] = 0;
+                     }
+                 }
+             }
+         }
+         
+     }
+     
 
 	public static void main(String[] args) {
 		
