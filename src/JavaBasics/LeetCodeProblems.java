@@ -499,11 +499,52 @@ public class LeetCodeProblems {
          
      }
      
+     public boolean isAnagram(String s, String t) {
+
+         // Appraoch 1:
+         if(s.length() != t.length()){
+              return false;
+          }
+              char [] a = s.toCharArray();
+              char [] b = t.toCharArray();
+              Arrays.sort(a);
+              Arrays.sort(b);
+          for(int i = 0; i< a.length;i++){
+              if(a[i]!=b[i])
+              return false;
+          }
+          
+
+          //Approcah 2:
+         /* if(s.length() != t.length()){
+              return false;
+          }
+          int[] alphabetArr = new int[26];
+
+          for(int i = 0; i<s.length();i++){
+              alphabetArr[s.charAt(i) - 'a']++;
+              alphabetArr[t.charAt(i) - 'a']--;
+          }
+
+          for(int counter: alphabetArr ){
+              if(counter!=0)
+              return false;
+          }
+          */
+
+          return true;
+          
+      }
+     
+     
 
 	public static void main(String[] args) {
 		
 		List<List<Integer>> generate = generate(5);
 		System.out.println(generate);
+		String s = "anagram";
+	
+
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
 		 */
