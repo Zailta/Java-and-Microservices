@@ -536,14 +536,42 @@ public class LeetCodeProblems {
           
       }
      
+     public static void charWithMaxOccurence(String str) {
+    	 Map<Character, Integer> tracker = new HashMap<Character, Integer>();
+    	 for(int i = 0; i<str.length();i++) {
+    		 if(tracker.containsKey(str.charAt(i))) {
+    			 Integer value = tracker.get(str.charAt(i))+1;
+    			 
+    			 tracker.put(str.charAt(i), value);
+    		 }
+    		 else {
+    		 tracker.put(str.charAt(i), 1);
+    		 }
+    	 }
+    	 
+    	 System.out.println(tracker);
+    	 int max = 0;
+    	 Character key =  null;
+    	 for(Character c: tracker.keySet()) {
+    		 if(tracker.get(c) > max) {
+    			 key = c;
+    			 max = tracker.get(c);
+    		 }
+    	 }
+    	 System.out.println("max occurences for '"+key +"' with max occurence of : "+max);
+    	 
+     }
+     
      
 
 	public static void main(String[] args) {
 		
-		List<List<Integer>> generate = generate(5);
-		System.out.println(generate);
-		String s = "anagram";
-	
+		/*
+		 * List<List<Integer>> generate = generate(5); System.out.println(generate);
+		 */
+		String s = "anaaaaaabbbbaacccccccccccccccccccccccgram";
+		
+		charWithMaxOccurence(s);
 
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
