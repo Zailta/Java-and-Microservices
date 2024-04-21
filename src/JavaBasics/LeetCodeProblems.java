@@ -562,6 +562,25 @@ public class LeetCodeProblems {
     	 
      }
      
+     public boolean isIsomorphic(String s, String t) {
+         //Approach 1
+       char[] source =  s.toCharArray();
+       char[] target =  t.toCharArray();
+        Map<Character, Character> isoTracker = new HashMap<>();
+        for(int i  = 0; i< s.length(); i++){
+            if(isoTracker.containsKey(source[i])){
+                if(isoTracker.get(source[i])!= target[i] )
+                return false;
+            }
+            else{
+                if(isoTracker.containsValue(target[i]))
+                return false;
+            isoTracker.put(source[i], target[i]);
+            }
+        }
+        return true;
+    }
+     
      
 
 	public static void main(String[] args) {
@@ -572,6 +591,7 @@ public class LeetCodeProblems {
 		String s = "anaaaaaabbbbaacccccccccccccccccccccccgram";
 		
 		charWithMaxOccurence(s);
+		Map<Character, Character> isoTracker = new HashMap<>();
 
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
