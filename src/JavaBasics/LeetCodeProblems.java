@@ -581,6 +581,40 @@ public class LeetCodeProblems {
         return true;
     }
      
+     public static String findMax(String [] str) {
+    	String maxString = str[0];
+    	for (int i = 0; i < str.length; i++) {
+    		//purify both :
+    		String a = purifyString(maxString), b  = purifyString(str[i]);
+    		
+			//cases:
+    		//if max> str[i]
+    		if(a.length() > b.length()) return maxString;
+    		//if max< str[i]
+    		if(a.length() < b.length()) return str[i];
+    		//case where length is same -> then we do the char comparison
+    		for (int j = 0; j < str.length; j++) {
+				if(a.charAt(i) != b.charAt(i)) {
+					if (a.charAt(i) > b.charAt(i)) return maxString;
+					else return str[i];
+				}
+			}
+    		//if both are same
+		}
+    	 
+    	 return null;
+    	 
+     }
+     
+     public static String purifyString(String s) {
+    	 for (int i = 0; i < s.length(); i++) {
+			if(s.charAt(i)!='0') return s.substring(i);
+		}
+    	 
+    	 return s;
+    	 
+     }
+     
      
 
 	public static void main(String[] args) {
@@ -590,9 +624,11 @@ public class LeetCodeProblems {
 		 */
 		String s = "anaaaaaabbbbaacccccccccccccccccccccccgram";
 		
-		charWithMaxOccurence(s);
-		Map<Character, Character> isoTracker = new HashMap<>();
-
+		//charWithMaxOccurence(s);
+		//Map<Character, Character> isoTracker = new HashMap<>();
+		String [] str = {"234", "234", "00000011","234"};
+		String findMax = findMax(str);
+		System.out.println(findMax);
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
 		 */
