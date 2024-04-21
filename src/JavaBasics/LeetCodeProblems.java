@@ -615,6 +615,32 @@ public class LeetCodeProblems {
     	 
      }
      
+     public int compress(char[] chars) {
+         int  i =0, j = 0; 
+        StringBuilder res = new StringBuilder();
+
+         while (j<chars.length){
+             if(chars[j]  == chars[i]) j++;
+             else {
+                 res.append(chars[i]);
+                 int len = (j-i);
+                 if(len > 1)
+                     res.append(len);
+                 i = j;
+             }
+         }
+             res.append(chars[i]);
+             int len = (j-i);
+             if(len > 1)
+               res.append(len);
+            String str =  res.toString();
+           for(int k = 0; k< str.length();k++){
+                 chars[k] = str.charAt(k);
+           }  
+         return str.length();
+         
+     }
+     
      
 
 	public static void main(String[] args) {
@@ -629,6 +655,10 @@ public class LeetCodeProblems {
 		String [] str = {"234", "234", "00000011","234"};
 		String findMax = findMax(str);
 		System.out.println(findMax);
+		char c = 'a';
+		String.valueOf(c);
+		StringBuilder sb = new StringBuilder();
+		
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
 		 */
