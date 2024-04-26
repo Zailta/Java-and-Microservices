@@ -24,6 +24,7 @@ public class LeetCodeProblems {
 
 				if (spaces == k)
 					return s.substring(0, i);
+				
 			}
 
 			return s;

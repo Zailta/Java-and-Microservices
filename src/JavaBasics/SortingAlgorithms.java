@@ -75,13 +75,16 @@ public class SortingAlgorithms {
 
 	public static int[] bubbleSort(int[] input, int size) {
 		for (int i = 0; i <= size - 2; i++) {
+			boolean flag  = true;
 			for (int j = 0; j <= size - 2 - i; j++) {
 				if (input[j] > input[j + 1]) {
 					int temp = input[j];
 					input[j] = input[j + 1];
 					input[j + 1] = temp;
+					flag = false;
 				}
 			}
+			if(flag == true) break;
 		}
 		return input;
 
