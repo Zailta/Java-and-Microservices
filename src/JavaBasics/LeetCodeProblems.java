@@ -642,6 +642,19 @@ public class LeetCodeProblems {
          
      }
      
+     public int majorityElement(int[] nums) {
+         for(int i = 0; i< nums.length;i++){
+             int item = nums[i];
+             int j = i-1;
+             while(j>=0 && nums[j] > item){
+                 nums[j+1] = nums[j];
+                 j--;
+             }
+             nums[j+1] = item;
+         }
+         return nums[nums.length/2];
+     }
+     
      
 
 	public static void main(String[] args) {
