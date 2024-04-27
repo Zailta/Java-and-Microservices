@@ -156,8 +156,9 @@ public class SortingAlgorithms {
 		 * 
 		 * int[] insertionSort = insertionSort(arr, arr.length);
 		 */
-		  merge(arr, 0, arr.length-1);
-		  System.out.println(Arrays.toString(arr));
+		/*
+		 * merge(arr, 0, arr.length-1); System.out.println(Arrays.toString(arr));
+		 */
 			/*
 			 * System.out.println("Sort using Selection Sort ->" +
 			 * Arrays.toString(selectionSort));
@@ -166,6 +167,8 @@ public class SortingAlgorithms {
 			 * Arrays.toString(arr1)); System.out.println("Sort using Insertion Sort ->" +
 			 * Arrays.toString(insertionSort));
 			 */
+		int[] bubbleSort = bubbleSort(arr, arr.length);
+		System.out.println("Sort using Bubble Sort ->" + Arrays.toString(bubbleSort));
 		
 	}
 
