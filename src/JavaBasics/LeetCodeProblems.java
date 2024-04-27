@@ -643,6 +643,10 @@ public class LeetCodeProblems {
      }
      
      public int majorityElement(int[] nums) {
+    	 
+    	 //approach 1:
+    	 Arrays.sort(nums);
+    	 //Approach 2:
          for(int i = 0; i< nums.length;i++){
              int item = nums[i];
              int j = i-1;
