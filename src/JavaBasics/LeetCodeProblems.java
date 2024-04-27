@@ -659,6 +659,29 @@ public class LeetCodeProblems {
          return nums[nums.length/2];
      }
      
+     public static int[] transformArray(int [] arr) {
+    	 int [] copy = Arrays.copyOf(arr, arr.length);
+    	 Arrays.sort(copy);
+    	 for(int  i = 0; i< arr.length;i++) {
+    		 for (int j = 0; j < copy.length; j++) {
+				if(copy[i] == arr[j]) {
+					arr[j] = i;
+				}
+			}
+    	 }
+    	 return arr;
+     }
+     
+     public int search(int[] nums, int target) {
+         int low = 0, high = nums.length-1;
+         while(low<=high)  {
+           int mid = (low+high)/2;
+           if(nums[mid] == target) return mid;
+           else if(nums[mid] > target) high = mid -1;
+           else low = mid+1;
+         }
+         return -1;
+       }
      
 
 	public static void main(String[] args) {
@@ -666,21 +689,26 @@ public class LeetCodeProblems {
 		/*
 		 * List<List<Integer>> generate = generate(5); System.out.println(generate);
 		 */
-		String s = "anaaaaaabbbbaacccccccccccccccccccccccgram";
+		//String s = "anaaaaaabbbbaacccccccccccccccccccccccgram";
 		
 		//charWithMaxOccurence(s);
 		//Map<Character, Character> isoTracker = new HashMap<>();
-		String [] str = {"234", "234", "00000011","234"};
-		String findMax = findMax(str);
-		System.out.println(findMax);
-		char c = 'a';
-		String.valueOf(c);
-		StringBuilder sb = new StringBuilder();
+		/*
+		 * String [] str = {"234", "234", "00000011","234"}; String findMax =
+		 * findMax(str); System.out.println(findMax); char c = 'a'; String.valueOf(c);
+		 * StringBuilder sb = new StringBuilder();
+		 */
 		
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
 		 */
+		int arr[] = {54,11,28,47,91,63};
 		 
+		int[] transformArray = transformArray(arr);
+		for(int el: transformArray) {
+			System.out.print(el +", ");
+		}
+		
 		 
 	}
 
