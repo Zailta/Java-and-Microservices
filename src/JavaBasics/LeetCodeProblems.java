@@ -700,6 +700,55 @@ public class LeetCodeProblems {
          }
          return -1;
      }
+     public int[] searchRange(int[] nums, int target) {
+         int[] ans = {-1, -1};
+         boolean flag = false;
+          int low = 0, high = nums.length-1;
+          
+          while(low<=high)  {
+         	 //for supporting higher Numbers because (low+high)/2 won't work 
+            int mid = low+ (high-low)/2;
+            if(nums[mid] == target){
+                 flag = true;
+                 break;
+            }
+            else if(nums[mid] > target) high = mid -1;
+            else if(nums[mid] < target)low = mid+1;
+          }
+          if(flag == false) return ans;
+         
+
+            low = 0; high = nums.length-1;
+            int lb = nums.length;
+          while(low<=high)  {
+         	 //for supporting higher Numbers because (low+high)/2 won't work 
+            int mid = low+ (high-low)/2;
+             if(nums[mid] >= target)
+             	{
+             	lb  = Math.min(lb, mid);
+             	high = mid -1;
+             	
+             	}
+            else low = mid+1;
+          }
+             ans[0] = lb;
+            low = 0; high = nums.length-1;
+            int ub = nums.length;
+          while(low<=high)  {
+         	 //for supporting higher Numbers because (low+high)/2 won't work 
+            int mid = low+ (high-low)/2;
+             if(nums[mid] > target)
+             	{
+             	ub  = Math.min(ub, mid);
+             	high = mid -1;
+             	
+             	}
+            else low = mid+1;
+          }
+          ans[1] = ub-1;
+
+          return ans;
+     }
      
 
 	public static void main(String[] args) {
@@ -720,14 +769,16 @@ public class LeetCodeProblems {
 		/*
 		 * int arr[][] = {{1,2,3},{5,6,7},{8,9,10}}; sumElement2D(arr);
 		 */
-		int arr[] = {54,11,28,47,91,63};
+		int arr[] = {5,7,7,8,8,10};
+		
 		 
-		int[] transformArray = transformArray(arr);
-		for(int el: transformArray) {
-			System.out.print(el +", ");
-		}
+		/*
+		 * int[] transformArray = transformArray(arr); for(int el: transformArray) {
+		 * System.out.print(el +", "); }
+		 */
 		
 		 
 	}
+	
 
 }
