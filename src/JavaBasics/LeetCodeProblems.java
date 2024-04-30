@@ -684,6 +684,22 @@ public class LeetCodeProblems {
          return -1;
        }
      
+     public int lowerBound(int [] nums , int target) {
+    	 int low = 0, high = nums.length-1;
+         while(low<=high)  {
+        	 //for supporting higher Numbers because (low+high)/2 won't work 
+        	 int lb = high;
+           int mid = low+ (high-low)/2;
+            if(nums[mid] >= target)
+            	{
+            	lb  = Math.min(lb, mid);
+            	high = mid -1;
+            	
+            	}
+           else low = mid+1;
+         }
+         return -1;
+     }
      
 
 	public static void main(String[] args) {
