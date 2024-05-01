@@ -771,6 +771,60 @@ public class LeetCodeProblems {
          return (int)high;
      }
      
+     public int bs(int [] nums, int low, int high, int target){
+         while(low<=high)  {
+
+           int mid = low+ (high-low)/2;
+           if(nums[mid] == target) {
+                return mid;
+           }
+           else if(nums[mid] > target) high = mid -1;
+           else low = mid+1;
+         }
+         return -1;
+    }
+    public int searchInRotatedArray(int[] nums, int target) {
+
+        if(nums.length <= 2){
+            for(int i =0; i<nums.length ; i++){
+                if(nums[i] == target)
+                    return i; 
+            }
+            return -1;
+        }
+        int low = 1, high  = nums.length-2;
+        int pivot  = -1;
+        while (low<=high){
+            int mid = low+(high -low)/2;
+            if(nums[mid+1] < nums[mid]  && nums[mid-1]< nums[mid])
+            { 
+                pivot  = mid;
+                break;
+
+            }
+            else if (nums[mid+1] > nums[mid]  && nums[mid-1]> nums[mid])
+            { 
+                pivot  = mid-1;
+                break;
+
+            }
+
+             else if (nums[mid+1] < nums[mid]  && nums[mid-1] > nums[mid]){
+                if(nums[mid] > nums[nums.length-1]) low  = mid+1;
+                else high = mid-1;
+             } 
+        }
+        if(pivot ==-1){
+            return bs(nums, 0, nums.length-1, target);
+        }
+        int left  = bs(nums, 0, pivot, target);
+        if(left != -1) return left;
+        int right  = bs(nums, pivot+1, nums.length-1, target);
+        
+        return right;
+        
+    }
+     
 
 	public static void main(String[] args) {
 		
