@@ -854,7 +854,6 @@ public class LeetCodeProblems {
             
              if(low < high )
            {
-            System.out.println(high);
            if(nums.get(low) + nums.get(high) < target){
              count ++;
              high-=1;
