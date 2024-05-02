@@ -868,7 +868,22 @@ public class LeetCodeProblems {
         }
         return count;
     }
-     
+    public int countNegatives(int[][] grid) {
+        int m = grid[0].length;
+        int count = 0;
+        for (int[] ints : grid) {
+            int start = 0;
+            int end = m - 1;
+            while (start <= end) {
+                int mid = start - (start - end) / 2;
+                if (ints[mid] < 0) {
+                    end = mid - 1;
+                    if (mid == 0 || ints[mid - 1] >= 0) count += m - mid;
+                } else start = mid + 1;
+            }
+        }
+        return count;
+    }
 
 	public static void main(String[] args) {
 		
@@ -895,6 +910,8 @@ public class LeetCodeProblems {
 		 * int[] transformArray = transformArray(arr); for(int el: transformArray) {
 		 * System.out.print(el +", "); }
 		 */
+		int[][] grid = {{4,3,2,-1},{3,2,1,-1},{1,1,-1,-2},{-1,-1,-2,-3}};
+		countNegatives(grid);
 		
 		 
 	}
