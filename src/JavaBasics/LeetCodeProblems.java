@@ -930,7 +930,6 @@ public class LeetCodeProblems {
 		 * System.out.print(el +", "); }
 		 */
 		int[][] grid = {{4,3,2,-1},{3,2,1,-1},{1,1,-1,-2},{-1,-1,-2,-3}};
-		countNegatives(grid);
 		
 		 
 	}
