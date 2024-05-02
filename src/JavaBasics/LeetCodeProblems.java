@@ -884,6 +884,25 @@ public class LeetCodeProblems {
         }
         return count;
     }
+    
+    public int countNegativesoptimised(int[][] grid) {
+        int count  = 0; 
+        int checker = 0;
+       
+       for(int[] rows : grid){
+        int low = 0, high = rows.length-1;
+        while (low<= high){
+                int mid = low + (high -low)/2;
+                if(rows[mid] < 0)
+                {
+                    high  = mid-1;
+                 if(mid == 0 || rows[mid-1] >= 0) count+= grid[0].length - mid;
+                }
+                else low = mid+1;
+        }
+       }
+        return count;
+    }
 
 	public static void main(String[] args) {
 		
