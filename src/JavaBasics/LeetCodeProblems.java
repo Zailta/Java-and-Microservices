@@ -846,6 +846,29 @@ public class LeetCodeProblems {
         }
         return -1;
 }
+    
+    public int countPairs(List<Integer> nums, int target) {
+        int low = 0, high = nums.size()-1;
+        int count  = 0; 
+        while(low<=high){
+            
+             if(low < high )
+           {
+            System.out.println(high);
+           if(nums.get(low) + nums.get(high) < target){
+             count ++;
+             high-=1;
+           }
+           else high -=1;
+           }
+           else 
+           {
+            high = nums.size()-1;
+            low+=1;
+           }
+        }
+        return count;
+    }
      
 
 	public static void main(String[] args) {
