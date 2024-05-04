@@ -967,6 +967,71 @@ public class LeetCodeProblems {
        return ans;
        */
     }
+    
+    
+    public List<Integer> findClosestElements(int[] arr, int k, int x) {
+        List<Integer> ans = new ArrayList<>();
+        //Bse case if x< arr[0]
+        if(x < arr[0]){
+            for(int i = 0 ; i< k; i++){
+                ans.add(arr[i]);
+            }
+            return ans;
+        }
+         if(x > arr[arr.length -1]){
+            Arrays.sort(arr);
+            for(int i = arr.length -1 ; i>= arr.length -1 - k; i--){
+                ans.add(arr[i]);
+            }
+            return ans;
+        }
+
+        //first calciulate the lowerbound of that Number 
+        int low = 0, high  = arr.length-1;
+        int lowerBound = high;
+        while(low <= high){
+                int mid = low + (high - low )/2;
+                if(arr[mid] >= x){
+                    lowerBound = Math.min(lowerBound, mid);
+                    high  = mid -1;
+                }
+                else {
+                    low = mid+1;
+                }
+        }
+        //lowerbound will be the starting point for the Closest Algo
+
+        int index_i = lowerBound, index_j = lowerBound-1;
+        while(k> 0  && index_j >= 0  && index_i < arr.length){
+            int difference_i = Math.abs(x-arr[index_i]);
+            int difference_j = Math.abs(x-arr[index_j]);
+            if(difference_j <= difference_i ){
+               ans.add(arr[index_j]); 
+               index_j--;
+               k--;
+            }
+            else {
+               ans.add(arr[index_i]); 
+               index_i++; 
+               k--;
+            }
+            
+
+            if(index_j < 0 && k > 0 ){
+               ans.add(arr[index_i]); 
+               index_i++;
+               k--;
+            }
+            if(index_i == arr.length -1 && k > 0 ){
+               ans.add(arr[index_j]); 
+               index_j--;
+               k--;
+            }
+        }
+        Collections.sort(ans);
+        
+        return ans;
+    }
 
 	public static void main(String[] args) {
 		
