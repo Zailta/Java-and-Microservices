@@ -915,6 +915,58 @@ public class LeetCodeProblems {
        }
        return a;
    }
+    
+  //optimised approach:
+    public int [] intersection(int[] nums, int[] nums1) {
+    boolean [] seen  = new boolean[1001];
+
+    for(int num: nums){
+        seen[num] = true;
+    }
+    List<Integer> intersectionList = new ArrayList<>();
+    for(int num: nums1){
+        if(seen[num]){
+        intersectionList.add(num);
+        seen[num] = false;
+        }
+    }
+    int[] result = new int[intersectionList.size()];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = intersectionList.get(i);
+        }
+
+    return result;
+
+
+    //absolute worst approach :
+   /* public int [] intersection(int[] nums, int[] nums1) {
+        int count = 0;
+        Map<Integer, Integer> checker1 = new HashMap<>();
+        for(int i = 0; i< nums.length; i++){
+             for(int j = 0; j< nums1.length; j++){
+            if(nums[i] == nums1[j] && !checker1.containsKey(nums[i])){
+               count++;
+               checker1.put(nums[i], 1);
+               break;
+            }
+        }
+        }
+    int[] ans = new int[count];
+    int index = 0;
+    Map<Integer, Integer> checker = new HashMap<>();
+        for(int i = 0; i< nums.length; i++){
+             for(int j = 0; j< nums1.length; j++){
+            if(nums[i] == nums1[j] && !checker.containsKey(nums[i])){
+               ans[index++] = nums[i];
+               checker.put(nums[i], 1);
+               break;
+            }
+        }
+        }
+       return ans;
+       */
+    }
 
 	public static void main(String[] args) {
 		
