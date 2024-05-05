@@ -1033,6 +1033,14 @@ public class LeetCodeProblems {
         return ans;
     }
 
+    public String reversePrefix(String word, char ch) {
+        final int index = word.indexOf(ch)+1;
+         
+        return new StringBuilder(word.substring(0, index))
+                    .reverse() 
+                    .append(word.substring(index)).toString();
+        
+    }
 	public static void main(String[] args) {
 		
 		/*
