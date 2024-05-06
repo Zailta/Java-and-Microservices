@@ -1067,6 +1067,44 @@ public class LeetCodeProblems {
         }
         return ans; 
     }
+    
+    public boolean isPossible(int [] arr, int mid, int days){
+        int d = 1, sum  = 0;
+        for(int i = 0; i< arr.length ; i++){
+        if(sum + arr[i]<= mid){
+            sum+=arr[i];
+        }
+       else {
+            sum  = arr[i];
+            d++;
+       }
+        }
+       if(d> days)
+       return false;
+       else return true;
+    }
+public int shipWithinDays(int[] arr, int days) {
+    int max = -1;
+    int totalWeight = 0;
+    for(int i =0 ; i < arr.length ; i++ ){
+        max = Math.max(max, arr[i]);
+        totalWeight+= arr[i];
+    }
+
+    int low = max, high  = totalWeight, minC = totalWeight;
+    while (low <= high){
+        int mid = low + (high  - low )/2;
+       
+
+         if(isPossible(arr, mid, days)){
+            minC = mid;
+            high  = mid - 1;
+         }
+         else low = mid+1;
+
+    }
+   return minC ;
+}
 	public static void main(String[] args) {
 		
 		/*
