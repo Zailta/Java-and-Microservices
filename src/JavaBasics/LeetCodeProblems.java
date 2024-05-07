@@ -1064,7 +1064,38 @@ public class LeetCodeProblems {
 		}
 		return minC;
 	}
+	public boolean isPossibleQ(int[] nums, int mid, int days) {
+		int d = 1, sum = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] % mid == 0)
+					sum += nums[i] / mid;
+				else
+					sum += nums[i] / mid + 1;
+		}
+		if (sum > days)
+			return false;
+		else
+			return true;
+	}
+    public int minimizedMaximum(int n, int[] arr) {
+       int max = -1;
+		for (int i = 0; i < arr.length; i++) {
+			max = Math.max(max, arr[i]);
+		}
 
+		int low = 1, high = max, minC = 0;
+		while (low <= high) {
+			int mid = low + (high - low) / 2;
+
+			if (isPossible(arr, mid, n)) {
+				minC = mid;
+				high = mid - 1;
+			} else
+				low = mid + 1;
+
+		}
+		return minC; 
+    }
 	public static void main(String[] args) {
 
 		/*
