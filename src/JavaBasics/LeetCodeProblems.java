@@ -1112,6 +1112,12 @@ public class LeetCodeProblems {
     	if (n==1) return 1;
     	return n * fact(n-1);
     }
+    
+    public int climbStairs(int n) {
+        if(n<=2) return n;
+
+        return climbStairs(n-1) + climbStairs(n-2);
+    }
 	public static void main(String[] args) {
 
 		/*
