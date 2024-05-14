@@ -1132,6 +1132,28 @@ public class LeetCodeProblems {
 
     }
     
+    public int searchrecursion(int[] nums, int target) {
+        int low = 0, high = nums.length-1;
+        return helper(nums, target, low, high);
+}
+public static int helper(int [] arr, int target, int low, int high){
+
+    if(low>high) return -1;
+
+    int mid = low + (high - low)/2;
+
+    if(arr[mid] == target) return mid;
+
+    if(arr[mid] <= arr[high]){
+        if(target > arr[mid]  && target <= arr[high]) return helper(arr, target, mid+1, high);
+        else  return helper(arr, target, low, mid-1);
+    }
+
+    if(target >= arr[low]  && target < arr[mid]) return helper(arr, target, low, mid-1);
+
+    return  helper(arr, target, mid+1,high);
+}
+    
     
 	public static void main(String[] args) {
 
