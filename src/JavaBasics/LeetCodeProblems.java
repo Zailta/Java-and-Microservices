@@ -1167,6 +1167,16 @@ public static int helper(int row, int col, int m, int n){
     int rightWays =  helper(row, col+1, m, n); 
     return bottomWays+rightWays;
 }
+
+//skip 'a'
+public static void skip(int i, String s, String ans) {
+	if(i == s.length()) {
+		System.out.println(ans);
+		return;
+	}
+	if(s.charAt(i)!='a') ans+=s.charAt(i);
+	skip(i+1, s, ans); 
+}
     
     
 	public static void main(String[] args) {
