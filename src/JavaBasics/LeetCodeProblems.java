@@ -1153,6 +1153,20 @@ public static int helper(int [] arr, int target, int low, int high){
 
     return  helper(arr, target, mid+1,high);
 }
+
+//maze path :
+public int uniquePaths(int m, int n) {
+    if(m==1 || n ==1) return 1;
+    int bottomWays = uniquePaths(m-1, n); 
+    int rightWays =  uniquePaths(m, n-1); 
+    return bottomWays+rightWays;
+}
+public static int helper(int row, int col, int m, int n){
+    if(row == m || col == n) return 1;
+    int bottomWays = helper(row+1, col, m, n); 
+    int rightWays =  helper(row, col+1, m, n); 
+    return bottomWays+rightWays;
+}
     
     
 	public static void main(String[] args) {
