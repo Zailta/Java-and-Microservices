@@ -1177,6 +1177,16 @@ public static void skip(int i, String s, String ans) {
 	if(s.charAt(i)!='a') ans+=s.charAt(i);
 	skip(i+1, s, ans); 
 }
+
+//printDecreasing - increasing -> Recursion
+
+public static void pdi(int n) {
+	if(n == 0)
+		return;
+	System.out.println(n);
+	pdi(n-1);
+	System.out.println(n);
+}
     
     
 	public static void main(String[] args) {
@@ -1204,6 +1214,8 @@ public static void skip(int i, String s, String ans) {
 		 * System.out.print(el +", "); }
 		 */
 		int[][] grid = { { 4, 3, 2, -1 }, { 3, 2, 1, -1 }, { 1, 1, -1, -2 }, { -1, -1, -2, -3 } };
+		
+		pdi(5);
 
 	}
 
